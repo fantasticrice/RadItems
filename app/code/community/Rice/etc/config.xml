@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Rice_RadItems>
+			<version>0.1.0</version>
+		</Rice_RadItems>
+	</modules>
+
+	<global>
+		<blocks>
+			<rice_raditems>
+				<class>Rice_RadItems_Block</class>
+			</rice_raditems>
+		</blocks>
+		<helpers>
+			<rice_raditems>
+				<class>Rice_RadItems_Helper</class>
+			</rice_raditems>
+		</helpers>
+		<models>
+			<rice_raditems>
+				<class>Rice_RadItems_Model</class>
+			</rice_raditems>
+		</models>
+		<resources>
+			<rice_raditems>
+				<setup>
+					<module>Rice_RadItems</module>
+				</setup>
+			</rice_raditems>
+		</resources>
+
+		<events>
+			<sales_convert_quote_to_order>
+				<observers>
+					<contains_radioactive_item>
+						<type>singleton</type>
+						<class>rice_raditems/observer</class>
+						<method>setContainsRadioactiveItem</method>
+					</contains_radioactive_item>
+				</observers>
+			</sales_convert_quote_to_order>
+			<controller_action_layout_generate_blocks_before>
+				<observers>
+					<radioactive_item_notice>
+						<type>singleton</type>
+						<class>rice_raditems/observer</class>
+						<method>addRadioactiveItemNotice</method>
+					</radioactive_item_notice>
+				</observers>
+			</controller_action_layout_generate_blocks_before>
+		</events>
+
+		<sales>
+			<quote>
+				<item>
+					<product_attributes>
+						<half_life/>
+					</product_attributes>
+				</item>
+			</quote>
+		</sales>
+	</global>
+
+	<adminhtml>
+		<layout>
+			<updates>
+				<rice_raditems>
+					<file>rice_raditems.xml</file>
+				</rice_raditems>
+			</updates>
+		</layout>
+	</adminhtml>
+</config>

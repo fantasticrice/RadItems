@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout>
+	<contains_radioactive_item>
+		<reference name="sales_order.grid">
+			<action method="addColumnAfter">
+				<columnId>contains_radioactive_item</columnId>
+				<arguments module="sales" translate="header">
+					<header>Contains Radioactive Item</header>
+					<index>contains_radioactive_item</index>
+					<filter>rice_raditems/widget_grid_column_filter_bool</filter>
+					<renderer>rice_raditems/widget_grid_column_renderer_bool</renderer>
+				</arguments>
+				<after>grand_total</after>
+			</action>
+		</reference>
+	</contains_radioactive_item>
+
+	<adminhtml_sales_order_grid>
+		<update handle="contains_radioactive_item"/>
+	</adminhtml_sales_order_grid>
+	<adminhtml_sales_order_index>
+		<update handle="contains_radioactive_item"/>
+	</adminhtml_sales_order_index>
+</layout>

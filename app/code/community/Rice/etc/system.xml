@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<sales>
+			<groups>
+				<rice_raditems translate="label">
+					<label>Radioactive Items</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>500</sort_order>
+					<fields>
+						<half_life_threshold translate="label comment">
+							<label>Half-life Threshold (seconds)</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>☢️ Orders which contain items below this threshold will be flagged as containing radioactive items.️</comment>
+						</half_life_threshold>
+					</fields>
+				</rice_raditems>
+			</groups>
+		</sales>
+	</sections>
+</config>
