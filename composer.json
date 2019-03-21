@@ -1,0 +1,12 @@
+{
+  "name": "Rice_RadItems",
+  "type": "magento-module",
+  "description": "Creates the ability to flag orders as containing radioactive items. ☢️ ",
+  "homepage": "https://github.com/fantasticrice/RadItems",
+  "authors": [
+	{
+	  "name": "Joshua Rice",
+	  "email": "rice.joshua@gmail.com"
+	}
+  ]
+}
