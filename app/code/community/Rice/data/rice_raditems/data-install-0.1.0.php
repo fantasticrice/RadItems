@@ -12,7 +12,7 @@ $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'half_life', [
 	'label'                      => 'Half-life (seconds)',
 	'frontend_class'             => 'validate-digits',
 	'input'                      => 'text',
-	'global'                     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+	'global'                     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
 	'user_defined'               => true,
 	'visible'                    => true,
 	'visible_on_front'           => false,
