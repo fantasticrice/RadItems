@@ -50,9 +50,6 @@ class Rice_RadItems_Model_Observer extends Mage_Core_Model_Observer
 	 */
 	public function addRadioactiveItemNotice(Varien_Event_Observer $observer)
 	{
-		/* @var Rice_RadItems_Helper_Data $helper */
-		$helper = Mage::helper('rice_raditems');
-		$message = $helper->__('Order Contains Radioactive Items!');
 		/* @var Mage_Core_Controller_Varien_Action $action */
 		$action = $observer->getAction();
 		$route = $action->getFullActionName();
@@ -60,9 +57,11 @@ class Rice_RadItems_Model_Observer extends Mage_Core_Model_Observer
 			/* @var Mage_Sales_Model_Order $order */
 			$order = Mage::registry('current_order');
 			if ($order && $order->getContainsRadioactiveItem()) {
+				/* @var Rice_RadItems_Helper_Data $helper */
+				$helper = Mage::helper('rice_raditems');
 				/* @var Mage_Core_Model_Session_Abstract $session */
 				$session = Mage::getSingleton($helper->isAdminhtml()? 'adminhtml/session' : 'core/session');
-				$session->addNotice($message);
+				$session->addNotice($helper->__('Order Contains Radioactive Items!'));
 			}
 		}
 		return $this;
